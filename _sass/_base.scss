@@ -30,7 +30,13 @@ table {
   }
 
   th {
-    font-weight: bold;
+    font-family: "Ubuntu Mono", monospace;
+    width: 90px;
+    vertical-align: middle !important;
+    padding-right: 24px;
+    font-weight: 400;
+    text-align: left;
+    font-size: .8em;
   }
 }
 
@@ -183,6 +189,49 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Socials
+
+.social-links {
+  overflow: auto;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.social-elem {
+  float: left;
+  padding-right: 15px;
+  .ai.ai-google-scholar.ai-2x {
+    font-size: 1.25em;
+  }
+  .fa {
+    color: black;
+    &:hover {
+      color: var(--global-hover-color);
+    }
+  }
+
+  .ai {
+    color: black;
+    &:hover {
+      color: var(--global-hover-color);
+    }
+  }
+
+  .fa-solid {
+    color: black;
+    &:hover {
+      color: var(--global-hover-color);
+    }
+  }
+}
+
+.social-address {
+  margin-left: 6px;
+  display: inline;
+  font-family: "Ubuntu Mono",monospace;
+  font-size: .875em;
+}
+
 // Citation
 
 .citation,
@@ -194,17 +243,6 @@ ul.task-list input[type="checkbox"] {
 
 .profile {
   width: 100%;
-
-  .more-info {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    font-family: monospace;
-
-    p {
-      display: inline-block;
-      margin: 0;
-    }
-  }
 }
 
 .profile.float-right {
@@ -435,11 +473,12 @@ ul.task-list input[type="checkbox"] {
 
 // Footer
 footer.fixed-bottom {
-  background-color: var(--global-footer-bg-color);
+  border-top: 1px solid var(--global-divider-color);
+  background-color: var(--global-bg-color);
   font-size: 0.75rem;
 
   .container {
-    color: var(--global-footer-text-color);
+    color: var(--global-text-color);
     padding-top: 9px;
     padding-bottom: 8px;
     text-align: center;
@@ -615,6 +654,12 @@ footer.sticky-bottom {
   a {
     text-decoration: none;
 
+    &::before {
+    }
+
+    &:hover::before {
+    }
+
     &:hover {
       .card-title {
         color: var(--global-theme-color);
@@ -645,12 +690,12 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-divider-color);
-    border-bottom: 1px solid var(--global-divider-color);
+    color: var(--dark);
+    border-bottom: 1px solid var(--dark);
     padding-top: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    text-align: right;
+    text-align: left;
   }
 }
 
@@ -676,8 +721,8 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
-    border-top: 1px solid var(--global-divider-color);
+    color: var(--black-color);
+    border-top: 1px solid var(--dark);
     padding-top: 1rem;
     margin-top: 2rem;
     margin-bottom: -2rem;
@@ -743,12 +788,12 @@ footer.sticky-bottom {
         }
 
         > span.more-authors {
-          color: var(--global-text-color-light);
+          color: var(--black-color);
           border-bottom: 1px dashed var(--global-text-color-light);
           cursor: pointer;
 
           &:hover {
-            color: var(--global-text-color);
+            color: var(--global-theme-color);
             border-bottom: 1px dashed var(--global-text-color);
           }
         }
@@ -756,8 +801,9 @@ footer.sticky-bottom {
 
       .links {
         a.btn {
-          color: var(--global-text-color);
-          border: 1px solid var(--global-text-color);
+          color: var(--white);
+          border: 1px solid var(--global-theme-color);
+          background-color: var(--global-theme-color);
           padding-left: 1rem;
           padding-right: 1rem;
           padding-top: 0.25rem;
@@ -767,6 +813,7 @@ footer.sticky-bottom {
           &:hover {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);
+            background-color: var(--white-color);
           }
         }
         a.award.btn {

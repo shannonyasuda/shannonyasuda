@@ -2,33 +2,61 @@
  * Content
  ******************************************************************************/
 
-body {
+ body {
   padding-bottom: 70px;
+  font-family: "Inter", "Raleway", Sans-serif;
+  font-weight: 300;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     scroll-margin-top: 66px;
+    line-height: 1.5;
+    font-weight: 300;
   }
+
+  div {
+    a {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--global-theme-color);
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: transform .3s ease-in-out;
+    }
+
+    &:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+}
+}
+
+body h2 {
+  font-size: 24px;
 }
 
 body.fixed-top-nav {
-  // Add some padding for the nav-bar.
   padding-top: 56px;
 }
 
 body.sticky-bottom-footer {
-  // Remove padding below footer.
   padding-bottom: 0;
 }
 
 .container {
   max-width: $max-content-width;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 // Profile
@@ -39,15 +67,11 @@ body.sticky-bottom-footer {
 }
 
 // TODO: redefine content layout.
-
 /******************************************************************************
  * Publications
  ******************************************************************************/
-
 // TODO: redefine publications layout.
-
 /*****************************************************************************
-* Projects
-*****************************************************************************/
-
+ * Projects
+ *****************************************************************************/
 // TODO: redefine projects layout.
